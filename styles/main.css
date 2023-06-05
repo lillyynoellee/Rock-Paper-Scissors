@@ -1,0 +1,297 @@
+/* Elements */
+/* Universal selector reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Nintendo";
+  font-size: 1.3rem;
+}
+
+
+body {
+  background: black;
+}
+
+@font-face {
+	font-family: 'Nintendo';
+	src: url("../assets/fonts/ro-spritendo-font/RoSpritendoSemiboldBeta-vmVwZ.otf");
+}
+
+p {
+  font-family: 'Nintendo';
+  color: white;
+}
+
+.sky {
+  width: 85%;
+  margin: auto;
+  margin-top: 5%;
+  height:500px;
+  background-image: url(../assets/images/sky.svg);
+  border-radius: 25px;
+  font-size:36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.win-lose-screen {
+  height:503px;
+  background-color: white;
+  border-radius: 25px;
+  width: 85%;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  translate: -50% 0;
+  overflow: hidden;
+  z-index: 10000000000000;
+  opacity: 0;
+  transition: opacity cubic-bezier(0.075, 0.82, 0.165, 1) 750ms;
+}
+
+.win-lose-screen.active {
+  opacity: 1;
+}
+
+.win-lose-info {
+  color:black;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  translate: -50% -50%;
+  text-align: center;
+  opacity: 1;
+  transition: opacity cubic-bezier(0.075, 0.82, 0.165, 1) 750ms;
+}
+
+.rainbow-road {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 0px 0px 25px 25px;
+  background: rgb(255,0,0);
+background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,179,0,1) 18%, rgba(254,255,0,1) 37%, rgba(0,255,29,1) 59%, rgba(0,168,255,1) 79%, rgba(102,0,255,1) 100%);
+
+-webkit-box-shadow:0px 0px 82px 15px rgba(255,245,46,0.68);
+-moz-box-shadow: 0px 0px 82px 15px rgba(255,245,46,0.68);
+box-shadow: 0px 0px 82px 15px rgba(255,245,46,0.68);
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2% 0%;
+}
+
+.title-text {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flex-circles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.circles {
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle1 {
+  width: 150px;
+  height: 150px;
+  background-color: #9BC53D;
+  border-color: #9BC53D;
+  border-radius: 100px;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  background-color: #C3423F;
+  border-color: #C3423F;
+  border-radius: 100px;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  background-color: #FDE74C;
+  border-color: #FDE74C;
+  border-radius: 100px;
+}
+
+.button-img {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+.item-wrappers {
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.player-box {
+  left: 20%;
+  top: 50%;
+  z-index: 10;
+  translate: 0 -50%;
+  position: absolute;
+}
+
+.cpu-box {
+  right: 20%;
+  top: 50%;
+  z-index: 10;
+  translate: 0 -50%;
+}
+
+.player-result, .cpu-result {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.player-result[src^="./"], .cpu-result[src^="./"] {
+  max-width: 70%;
+  height: 70%;
+}
+
+.start-screen {
+  opacity: 1;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.opacity {
+  display: none;
+}
+
+.start-screen-menu {
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50px;
+}
+
+.start-screen-info {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  translate: -50% -50%;
+  text-align: center;
+}
+
+.start-button {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  translate: -50% -50%;
+  cursor: pointer;
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.playerAnimation {
+  animation: playerAnimation 1s linear 0s 1 normal;
+}
+
+.cpuAnimation {
+  animation: cpuAnimation 1s linear 0s 1 normal;
+}
+
+@keyframes playerAnimation {
+  0% {
+    left: 20%;
+  } /* left */
+
+  100% {
+    left: 80%;
+  } /* right */
+}
+
+@keyframes cpuAnimation {
+  0% {
+    right: 20%;
+  } /* left */
+
+  100% {
+    right: 80%;
+  } /* right */
+}
+
+@media screen and (width <= 1080px) {
+  .sky {
+    margin-top: 15%;
+  }
+
+  .title-text2 {
+    margin-top: -73%;
+  }
+
+  .flex-circles {
+    margin-top: 20%;
+    position: relative;
+  }
+
+  .player-box {
+    left: 5%;
+  }
+
+  .cpu-box {
+    right: 5%;
+  }
+
+  .title-text {
+    top: 20%;
+  }
+
+  .player-text {
+    position: absolute;
+    right: 50%;
+    left: 22%;
+    top: 65%;
+    translate: -50% -50%;
+    font-size: 0.8em;
+    text-align: center;
+  }
+
+  .cpu-text {
+    position: absolute;
+    left: 77%;
+    top: 65%;
+    translate: -50% -50%;
+    font-size: 0.8em;
+  }
+
+  .win-lose-screen {
+    height: 515px;
+  }
+}

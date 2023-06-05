@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/Mushroom.svg">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+<div class="start-screen">
+  <div class="start-screen-menu">
+    <div class="start-screen-info">This is a Mario Kart Themed take on Rock-Paper-Scissors.<br><br><br>Rules: <br><br>Shell beats Mushroom <br><br>Mushroom beats Banana<br><br> Banana beats Shell</div>
+    <button class="start-button" onclick="menuDisappear()">Start</button>
+  </div>
+</div>
+
+<div class="sky">
+  <div class="player-box item-wrappers">
+    <img class="player-result" src="">
+  </div>
+  <div class="cpu-box item-wrappers">
+    <img class="cpu-result" src="">
+  </div>
+  
+  <div class="rainbow-road">
+  </div>
+</div>
+<div class="win-lose-screen">
+  <div class="win-lose-info">You <span class="win-lose-title">!</span><br><br><br>Play Again?</div>
+  <button class="start-button" onclick="restartGame()">Restart</button>
+</div>
+<div class="flex-container">
+  <div class="player-text title-text">
+    Player Score: 
+    <span class="player-score">0</span>
+  </div>
+  <h1 class="title-text title-text2">Rock, Paper, Scissors</h1>
+  <div class="cpu-text title-text">
+    CPU Score: 
+    <span class="cpu-score">0</span>
+  </div>
+</div>
+<div class="flex-circles">
+  <button class="circle1" onclick="clickShell()">
+    <img src="./assets/images/Shell.svg">
+  </button>
+  <button class="circle2 circles" onclick="clickMushroom()">
+    <img src="./assets/images/Mushroom.svg" class="button-img">
+  </button>
+  <button class="circle3">
+    <img src="./assets/images/Banana.svg" onclick="clickBanana()">
+  </button>
+
+  </div>
+</body>
+</html>
